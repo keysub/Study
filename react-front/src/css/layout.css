@@ -1,0 +1,233 @@
+/* ==========================================
+   1. GLOBAL & BASIC LAYOUT (기존 유지)
+   ========================================== */
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f4f6f9;
+}
+
+#header {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(90deg, #0f172a, #1e293b);
+    padding: 0 24px;
+    color: white;
+}
+
+.header-left { width: 220px; }
+.header-center { flex: 1; display: flex; justify-content: center; }
+.header-right { 
+    width: 180px; display: flex; justify-content: flex-end; 
+    align-items: center; gap: 10px; color: #cbd5e1; font-size: 14px; 
+}
+
+.header-menu { display: flex; gap: 32px; }
+.logo-area { display: flex; align-items: center; gap: 10px; font-size: 18px; font-weight: 600; margin-right: 50px; }
+.logo-icon, .user-icon { font-size: 20px; }
+
+.menu-item { cursor: pointer; color: #cbd5e1; padding: 18px 4px; font-size: 15px; }
+.menu-item:hover { color: white; }
+.menu-item.active { color: #38bdf8; border-bottom: 3px solid #38bdf8; }
+
+#layout { display: flex; height: calc(100vh - 60px); }
+
+#sidebar { width: 240px; background: white; border-right: 1px solid #e5e7eb; }
+.sidebar-group { border-bottom: 1px solid #e5e7eb; }
+.sidebar-title { 
+    padding: 14px 18px; font-weight: 600; background: #f8fafc; 
+    cursor: pointer; display: flex; justify-content: space-between; 
+}
+.sidebar-title:hover { background: #f1f5f9; }
+.sidebar-list { display: none; }
+.sidebar-list.active { display: block; }
+.sidebar-item { padding: 12px 20px; cursor: pointer; color: #334155; }
+.sidebar-item:hover { background: #f1f5f9; }
+.sidebar-item.active { background: #e0f2fe; color: #0284c7; font-weight: 600; }
+
+#mainContent { flex: 1; padding: 10px; box-sizing: border-box; }
+
+/* ==========================================
+   2. DASHBOARD STYLE (기존 유지)
+   ========================================== */
+.dashboard { display: flex; gap: 18px; flex-wrap: wrap; }
+.dash-btn { 
+    padding: 18px 28px; border: none; border-radius: 12px; background: white; 
+    font-size: 15px; font-weight: 600; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.08); 
+}
+.dash-btn:hover { transform: translateY(-2px); }
+
+.dashboard-wrapper { display: flex; flex-direction: column; gap: 40px; }
+.dashboard-hero { 
+    background: white; padding: 30px 40px; border-radius: 16px; 
+    display: flex; justify-content: space-between; align-items: center; 
+    box-shadow: 0 6px 14px rgba(0,0,0,0.08); 
+}
+.hero-text h1 { margin: 0; font-size: 28px; }
+.hero-text p { margin-top: 10px; color: #64748b; line-height: 1.5; }
+.hero-image { font-size: 60px; }
+
+.dashboard-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; }
+.dash-card { 
+    background: white; padding: 26px 20px; border-radius: 16px; text-align: center; 
+    cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.08); transition: all .2s ease; 
+}
+.dash-card:hover { transform: translateY(-4px); box-shadow: 0 10px 20px rgba(0,0,0,0.12); }
+.card-icon { font-size: 36px; margin-bottom: 12px; }
+.card-title { font-size: 16px; font-weight: 600; color: #1e293b; }
+.card-desc { margin-top: 6px; font-size: 13px; color: #64748b; }
+
+/* ==========================================
+   3. WBS SETUP PAGE (중복 정리된 슬림 스타일)
+   ========================================== */
+.page-title {font-size: 24px; font-weight: bold; margin-bottom: 20px; color: #333;}
+   
+.page-wrap {
+    height: 100%; display: flex; flex-direction: column;
+    padding: 10px 5px 10px 10px; box-sizing: border-box;
+}
+
+/* --- 검색 영역 --- */
+.search-box-container { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.search-box {
+    width: 100%;
+    padding: 8px 15px;
+    /* 배경색을 연한 푸른색(#e7f3ff)으로 변경 */
+    background-color: #e7f3ff; 
+    /* 보더 색상도 배경에 맞춰 조금 더 진한 푸른색(#b3d7ff)으로 조절하면 더 깔끔합니다 */
+    border: 1px solid #b3d7ff; 
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.search-row { display: flex; gap: 20px; align-items: center; margin-bottom: 8px; }
+.search-item { display: flex; align-items: center; gap: 10px; font-size: 13px; font-weight: bold; }
+.search-item select { padding: 4px 8px; height: 30px; border: 1px solid #ccc; border-radius: 4px; }
+
+/* 레이블 앞에 동그라미 추가 */
+.search-item label {
+  display: flex;
+  align-items: center;
+  position: relative;
+  min-width: fit-content;
+}
+
+.search-item label::before {
+  content: "";
+  display: inline-block;
+  width: 6px;   /* 동그라미 크기 */
+  height: 6px;
+  background-color: #3b82f6; /* Search 버튼과 맞춘 파란색 */
+  border-radius: 50%;       /* 원형으로 만듦 */
+  margin-right: 8px;        /* 텍스트와의 간격 */
+  flex-shrink: 0;           /* 크기 고정 */
+}
+
+/* 날짜 입력창 스타일 추가 */
+.search-item input[type="date"] { 
+  padding: 4px 8px; 
+  height: 21px; 
+  border: 1px solid #ccc; 
+  border-radius: 4px; 
+  font-family: inherit; /* 폰트 일관성 */
+}
+
+/* 날짜 사이 물결표시(~) 정렬 */
+.date-separator {
+  font-weight: normal;
+  color: #666;
+}
+
+.search-bottom-bar { display: flex; justify-content: flex-end; border-top: 1px solid #eee; padding-top: 6px; }
+
+/* --- 접기/펼치기 버튼 --- */
+.toggle-btn {
+    display: flex; justify-content: center; align-items: center; padding: 8px;
+    cursor: pointer; color: #64748b; font-size: 13px; font-weight: 500; transition: color 0.2s;
+}
+.toggle-btn:hover { color: #3b82f6; text-decoration: underline; }
+.only-toggle { background: #e7f5ff; border-radius: 8px; margin-bottom: 12px; }
+
+/* --- 공통 버튼 스타일 (통일) --- */
+.btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    height: 27px; min-width: 80px; padding: 0 16px;
+    border: none; border-radius: 6px; font-size: 13px; font-weight: 600;
+    cursor: pointer; transition: all 0.2s ease; box-sizing: border-box;
+}
+.btn:hover { filter: brightness(90%); transform: translateY(-1px); box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+.btn:active { transform: translateY(0); box-shadow: none; }
+
+/* 버튼 개별 색상 */
+/* 버튼 컨테이너 간격 조절 */
+.search-actions { 
+  display: flex; 
+  gap: 8px; /* 버튼 사이의 간격 */
+  align-items: center;
+}
+
+/* 검색 버튼 (기존 유지 및 보완) */
+.btn.search.primary { 
+  background: #3b82f6; 
+  color: white; 
+  border: 1px solid #2563eb;
+  padding: 4px 15px; /* 가로 폭을 살짝 넓혀 가독성 향상 */
+  cursor: pointer;
+}
+
+/* 리셋 버튼 (새로운 디자인) */
+/* (선택사항) 리셋 버튼 파스텔톤 보강 */
+.btn.reset { 
+  background: #f1f5f9; 
+  color: #475569; 
+  border: 1px solid #2563eb;
+  padding: 4px 15px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.btn.reset:hover { background: #e2e8f0; }
+
+.btn.add { background: #10b981; color: white; }
+.btn.delete { background: #f43f5e; color: white; margin-left: 6px; }
+.btn.save { background: #6366f1; color: white; }
+
+/* --- 그리드 영역 --- */
+.grid-toolbar { display: flex; justify-content: space-between; margin-bottom: 8px; align-items: center; }
+.grid-wrap { flex: 1; border-radius: 14px 14px 0 0; overflow: hidden; }
+.grid-wrap > div { height: 100% !important; }
+
+/* AG-Grid 테마 커스텀 */
+.ag-theme-alpine { height: 100%; }
+.ag-theme-alpine .ag-header { background: #edf2ff; font-weight: 700; }
+.ag-theme-alpine .ag-row:hover { background: #f1f3f5; }
+
+/* Ag-Grid 헤더 스타일 커스텀 */
+.ag-theme-quartz {
+    /* 1. 색상: 전체 페이지와 어울리는 차분한 그레이 톤 */
+    --ag-header-background-color: #f8f9fa; 
+    --ag-header-foreground-color: #333333;
+    --ag-border-color: #e9ecef;
+    --ag-row-border-color: #f1f3f5;
+    
+    /* 세로줄을 보이게 설정 (기본은 display: none인 경우가 많음) */
+    --ag-borders-vertical: solid 1px;
+    /* 세로줄 색상: 아주 연한 그레이로 설정하여 데이터 가독성을 높임 */
+    --ag-border-color: #e9ecef; 
+    
+    /* 2. 폰트 및 간격 */
+    --ag-font-size: 13px;
+    --ag-grid-size: 4px; /* 전반적인 패딩 축소 */
+}
+
+/* 헤더 텍스트 스타일: 굵게 및 중앙 정렬 */
+.ag-theme-quartz .ag-header-cell-label {
+    font-weight: 700;
+    justify-content: center;
+}

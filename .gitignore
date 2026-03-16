@@ -1,0 +1,15 @@
+# 모든 것을 무시
+/*
+
+# 폴더와 설정 파일은 예외
+!/react-front/
+!/vue-front/
+!.gitignore
+!.gitattributes
+
+# 폴더 내부의 무거운 파일들은 다시 무시
+**/node_modules/
+**/dist/
+**/build/
+.eslintcache
+*.log
