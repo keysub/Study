@@ -8,7 +8,7 @@
 
 - **작성자**: keysub
 - **원본 주소**: https://github.com/keysub/Study
-- **참조 방법**: "출처: [작성자 이름] ([URL])"
+- **참조 방법**: "출처: keysub (https://github.com/keysub/Study))"
 
 > [!NOTE]
 > 위 라이선스에 따라 자유롭게 공유 및 수정이 가능하나, 원저작자를 밝히는 것은 필수 의무 사항입니다.
