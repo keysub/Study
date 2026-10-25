@@ -1,14 +1,14 @@
 ---
 
-## 📄 License & Copyright
+📄 License & Copyright
+<img src="https://shields.io" alt="License: CC BY 4.0">
 
-[![License: CC BY 4.0](https://shields.io)](https://creativecommons.org)
+All works contained in this project's source code and Wiki are provided under the Creative Commons Attribution 4.0 (CC BY 4.0) license. If you quote or redistribute this content, you must credit the source as shown below.
 
-본 프로젝트의 소스 코드와 Wiki에 포함된 모든 저작물은 **저작자 표시(CC BY 4.0)** 라이선스 하에 제공됩니다. 본 내용을 인용하거나 재배포할 경우, 아래와 같이 출처를 반드시 명시해야 합니다.
+Author: keysub
+Original URL: https://github.com/keysub/Study
+How to cite: "Source: keysub (https://github.com/keysub/Study)"
+[!NOTE]
+Under the license above, you are free to share and modify the content, but crediting the original author is mandatory.
 
-- **작성자**: keysub
-- **원본 주소**: https://github.com/keysub/Study
-- **참조 방법**: "출처: keysub (https://github.com/keysub/Study))"
-
-> [!NOTE]
-> 위 라이선스에 따라 자유롭게 공유 및 수정이 가능하나, 원저작자를 밝히는 것은 필수 의무 사항입니다.
+I removed the extra closing parenthesis from the citation URL in the original: Study)) is now Study).
